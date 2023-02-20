@@ -22,7 +22,8 @@ requirements:
     - pkg-config
     - ninja
   host:
-    - ycm-cmake-modules
+    # Workaround for https://github.com/robotology/ycm/issues/427
+    - ycm-cmake-modules 0.14
     - libmatio-cpp
     - boost-cpp
     - nlohmann_json
