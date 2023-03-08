@@ -10,7 +10,7 @@ source:
     sha256: 459e0734f662b36803daa7e53fb35957eb87772e9cd7310ad092bec4b42af429
 
 build:
-  number: 2
+  number: 3
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x.x') }}
 
@@ -22,8 +22,7 @@ requirements:
     - pkg-config
     - ninja
   host:
-    # Workaround for https://github.com/robotology/ycm/issues/427
-    - ycm-cmake-modules 0.14
+    - ycm-cmake-modules
     - libmatio-cpp
     - boost-cpp
     - nlohmann_json
