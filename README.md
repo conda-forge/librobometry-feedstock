@@ -1,11 +1,11 @@
-About librobometry
-==================
+About librobometry-feedstock
+============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/librobometry-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/robotology/robometry
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/librobometry-feedstock/blob/main/LICENSE.txt)
 
 Summary: Telemetry library for logging data.
 
