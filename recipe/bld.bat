@@ -1,11 +1,13 @@
 mkdir build
 cd build
 
+:: BUILD_TESTING is disabled as a workaround for
+:: https://github.com/robotology/ycm/issues/427
 cmake ^
     -G "Ninja" ^
     -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
     -DCMAKE_BUILD_TYPE=Release ^
-    -DBUILD_TESTING:BOOL=ON ^
+    -DBUILD_TESTING:BOOL=OFF ^
     -DBUILD_SHARED_LIBS:BOOL=ON ^
     -DROBOMETRY_USES_SYSTEM_nlohmann_json:BOOL=ON ^
     %SRC_DIR%
