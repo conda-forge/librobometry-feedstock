@@ -1,5 +1,5 @@
 {% set name = "librobometry" %}
-{% set version = "1.2.0" %}
+{% set version = "1.2.1" %}
 
 package:
   name: {{ name }}
@@ -7,10 +7,10 @@ package:
 
 source:
   - url: https://github.com/robotology/robometry/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: 459e0734f662b36803daa7e53fb35957eb87772e9cd7310ad092bec4b42af429
+    sha256: 98161a58bb05e1a694b47f371e6d7001d1d648fa2b91c94ddb37f50fbdde37a1
 
 build:
-  number: 3
+  number: 0
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x.x') }}
 
