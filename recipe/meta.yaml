@@ -49,6 +49,7 @@ outputs:
       requires:
         - python
         - pip
+        - jinja2
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
         - cmake
