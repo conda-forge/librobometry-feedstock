@@ -54,6 +54,7 @@ outputs:
         - cmake
         - pkg-config
         - ninja
+        - git
 
   - name: {{ name }}
     build:
