@@ -31,7 +31,7 @@ outputs:
       host:
         - ycm-cmake-modules
         - libmatio-cpp
-        - libboost-headers
+        - libboost-devel
         - nlohmann_json
         - yarp
       run_constrained:
