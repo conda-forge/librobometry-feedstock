@@ -34,6 +34,8 @@ outputs:
         - libboost-devel
         - nlohmann_json
         - yarp
+      run:
+        - libboost-headers
       run_constrained:
         - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx and x86_64]
 
