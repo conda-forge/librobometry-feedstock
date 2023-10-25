@@ -44,6 +44,16 @@ outputs:
         - if not exist %LIBRARY_INC%\\robometry\\BufferManager.h exit 1  # [win]
         - if not exist %LIBRARY_LIB%\\robometry.lib exit 1  # [win]
         - if not exist %LIBRARY_BIN%\\robometry.dll exit 1  # [win]
+        - python -m pip install git+https://github.com/ami-iit/cmake-package-check@v0.0.1
+        - cmake-package-check robometry
+      requires:
+        - python
+        - pip
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - cmake
+        - pkg-config
+        - ninja
 
   - name: {{ name }}
     build:
