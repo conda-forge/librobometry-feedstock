@@ -8,6 +8,8 @@ cxx_compiler:
 - vs2019
 libboost_devel:
 - '1.82'
+libmatio_cpp:
+- 0.2.3
 pin_run_as_build:
   python:
     min_pin: x.x

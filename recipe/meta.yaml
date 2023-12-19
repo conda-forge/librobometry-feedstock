@@ -11,7 +11,7 @@ source:
     sha256: ba2abda759332c57026b033c14a8aa5874e101bc86dd858bded62ab17381eedb
 
 build:
-  number: 4
+  number: 5
 
 outputs:
   - name: {{ cxx_name }}
@@ -33,7 +33,7 @@ outputs:
         - libmatio-cpp
         - libboost-devel
         - nlohmann_json
-        - yarp
+        - libyarp
       run:
         - libboost-headers
       run_constrained:
