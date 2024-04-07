@@ -1,9 +1,7 @@
-{% set name = "robometry" %}
-{% set cxx_name = "lib" + name  %}
 {% set version = "1.2.3" %}
 
 package:
-  name: {{ name }}-split
+  name: robometry-split
   version: {{ version }}
 
 source:
@@ -11,19 +9,20 @@ source:
     sha256: 9d8c889a7f607262929aeb3887db3606b2b2ad37f80da41babc9976e5d01a54c
 
 build:
-  number: 0
+  number: 1
 
 outputs:
-  - name: {{ cxx_name }}
+  - name: librobometry
     script: build_cxx.sh  # [unix]
     script: bld_cxx.bat  # [win]
     build:
       run_exports:
-        - {{ pin_subpackage(cxx_name, max_pin='x.x.x') }}
+        - {{ pin_subpackage("librobometry", max_pin='x.x.x') }}
 
     requirements:
       build:
         - {{ compiler('c') }}
+        - {{ stdlib('c') }}
         - {{ compiler('cxx') }}
         - cmake
         - pkg-config
@@ -36,8 +35,6 @@ outputs:
         - libyarp
       run:
         - libboost-headers
-      run_constrained:
-        - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx and x86_64]
 
     test:
       commands:
@@ -59,13 +56,13 @@ outputs:
         - ninja
         - git
 
-  - name: {{ name }}
+  - name: robometry
     build:
       run_exports:
-        - {{ pin_subpackage(cxx_name, max_pin='x') }}
+        - {{ pin_subpackage("librobometry", max_pin='x') }}
     requirements:
       run:
-        - {{ pin_subpackage(cxx_name, exact=True) }}
+        - {{ pin_subpackage("librobometry", exact=True) }}
     test:
       commands:
         - test -f $PREFIX/include/robometry/BufferManager.h  # [unix]
