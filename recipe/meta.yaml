@@ -1,9 +1,7 @@
-{% set name = "robometry" %}
-{% set cxx_name = "lib" + name  %}
 {% set version = "1.2.3" %}
 
 package:
-  name: {{ name }}-split
+  name: robometry-split
   version: {{ version }}
 
 source:
@@ -14,12 +12,12 @@ build:
   number: 1
 
 outputs:
-  - name: {{ cxx_name }}
+  - name: librobometry
     script: build_cxx.sh  # [unix]
     script: bld_cxx.bat  # [win]
     build:
       run_exports:
-        - {{ pin_subpackage(cxx_name, max_pin='x.x.x') }}
+        - {{ pin_subpackage("librobometry", max_pin='x.x.x') }}
 
     requirements:
       build:
@@ -59,13 +57,13 @@ outputs:
         - ninja
         - git
 
-  - name: {{ name }}
+  - name: robometry
     build:
       run_exports:
-        - {{ pin_subpackage(cxx_name, max_pin='x') }}
+        - {{ pin_subpackage("librobometry", max_pin='x') }}
     requirements:
       run:
-        - {{ pin_subpackage(cxx_name, exact=True) }}
+        - {{ pin_subpackage("librobometry", exact=True) }}
     test:
       commands:
         - test -f $PREFIX/include/robometry/BufferManager.h  # [unix]
