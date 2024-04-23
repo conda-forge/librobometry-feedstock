@@ -19,7 +19,7 @@ cxx_compiler_version:
 libboost_devel:
 - '1.84'
 libmatio_cpp:
-- 0.2.3
+- 0.2.4
 libyarp:
 - 3.9.0
 macos_machine:
