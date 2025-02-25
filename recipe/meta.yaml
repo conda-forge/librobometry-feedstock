@@ -1,4 +1,4 @@
-{% set version = "1.2.5" %}
+{% set version = "1.2.6" %}
 
 package:
   name: robometry-split
@@ -6,10 +6,10 @@ package:
 
 source:
   - url: https://github.com/robotology/robometry/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: 3b620ed1a4310aca74cf0c1665f6ed5885fae856318ef51680b40901d5e78d90
+    sha256: 69d72efade157a0e83d0d813b2a3035310ada5aaa8400df3d29decb702a79080
 
 build:
-  number: 1
+  number: 0
 
 outputs:
   - name: librobometry
