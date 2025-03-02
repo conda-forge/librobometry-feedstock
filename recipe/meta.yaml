@@ -9,7 +9,7 @@ source:
     sha256: 69d72efade157a0e83d0d813b2a3035310ada5aaa8400df3d29decb702a79080
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: librobometry
