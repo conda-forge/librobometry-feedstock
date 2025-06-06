@@ -52,15 +52,8 @@ outputs:
           - cmake-package-check robometry
         requirements:
           run:
-            - python
-            - pip
-            - jinja2
             - ${{ compiler('c') }}
             - ${{ compiler('cxx') }}
-            - cmake
-            - pkg-config
-            - ninja
-            - git
             - cmake-package-check
 
   - package:
@@ -71,11 +64,13 @@ outputs:
       run_exports:
         - ${{ pin_subpackage('librobometry', upper_bound='x.x.x') }}
     tests:
-      - package_contents:
-          include:
-            - robometry/BufferManager.h
-          lib:
-            - robometry
+      - script:
+          - cmake-package-check robometry
+        requirements:
+          run:
+            - ${{ compiler('c') }}
+            - ${{ compiler('cxx') }}
+            - cmake-package-check
 
 about:
   homepage: https://github.com/robotology/robometry
