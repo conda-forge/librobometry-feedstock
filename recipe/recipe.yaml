@@ -17,6 +17,7 @@ build:
 outputs:
   - package:
       name: librobometry
+    build:
       script:
         - if: unix
           then: build_cxx.sh
