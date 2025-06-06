@@ -1,0 +1,88 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
+
+context:
+  version: "1.2.7"
+
+recipe:
+  name: robometry-split
+  version: ${{ version }}
+
+source:
+  - url: https://github.com/robotology/robometry/archive/refs/tags/v${{ version }}.tar.gz
+    sha256: 74996f6c50a0e005f25153e48a3b4696bc02053265eabcd5f6efcd09051a8a73
+
+outputs:
+  - package:
+      name: librobometry
+    build:
+      number: 0
+      script:
+        - if: unix
+          then: build_cxx.sh
+        - if: win
+          then: bld_cxx.bat
+    requirements:
+      build:
+        - ${{ compiler('c') }}
+        - ${{ stdlib('c') }}
+        - ${{ compiler('cxx') }}
+        - cmake
+        - pkg-config
+        - ninja
+      host:
+        - ycm-cmake-modules
+        - libmatio-cpp
+        - libboost-devel
+        - nlohmann_json
+        - libyarp
+      run:
+        - libboost-headers
+      run_exports:
+        - ${{ pin_subpackage('librobometry', max_pin='x.x.x') }}
+
+    tests:
+      - package_contents:
+          include:
+            - robometry/BufferManager.h
+          lib:
+            - robometry
+      - script:
+          - cmake-package-check robometry
+        requirements:
+          run:
+            - python
+            - pip
+            - jinja2
+            - ${{ compiler('c') }}
+            - ${{ compiler('cxx') }}
+            - cmake
+            - pkg-config
+            - ninja
+            - git
+            - cmake-package-check
+
+  - package:
+      name: robometry
+    build:
+      number: 0
+    requirements:
+      run:
+        - ${{ pin_subpackage('librobometry', exact=True) }}
+      run_exports:
+        - ${{ pin_subpackage('librobometry', max_pin='x') }}
+    tests:
+      - package_contents:
+          include:
+            - robometry/BufferManager.h
+          lib:
+            - robometry
+
+about:
+  homepage: https://github.com/robotology/robometry
+  license: BSD-3-Clause
+  license_file: LICENSE
+  summary: Telemetry library for logging data.
+
+extra:
+  recipe-maintainers:
+    - traversaro
