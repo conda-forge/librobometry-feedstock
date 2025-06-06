@@ -1,7 +1,7 @@
 MACOSX_DEPLOYMENT_TARGET:
-- '11.0'
+- '10.15'
 MACOSX_SDK_VERSION:
-- '11.0'
+- '10.15'
 c_compiler:
 - clang
 c_compiler_version:
@@ -9,7 +9,7 @@ c_compiler_version:
 c_stdlib:
 - macosx_deployment_target
 c_stdlib_version:
-- '11.0'
+- '10.15'
 channel_sources:
 - conda-forge
 channel_targets:
@@ -20,22 +20,14 @@ cxx_compiler_version:
 - '18'
 libboost_devel:
 - '1.86'
-libboost_headers:
-- '1.86'
 libmatio_cpp:
 - 0.3.0
 libyarp:
 - 3.11.2
 macos_machine:
-- arm64-apple-darwin20.0.0
-pin_run_as_build:
-  python:
-    min_pin: x.x
-    max_pin: x.x
-python:
-- 3.10.* *_cpython
+- x86_64-apple-darwin13.4.0
 target_platform:
-- osx-arm64
+- osx-64
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
