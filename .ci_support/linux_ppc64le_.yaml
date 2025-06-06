@@ -23,7 +23,7 @@ libboost_devel:
 libmatio_cpp:
 - 0.3.0
 libyarp:
-- 3.11.2
+- 3.12.0
 target_platform:
 - linux-ppc64le
 zip_keys:
