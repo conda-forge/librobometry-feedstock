@@ -23,7 +23,7 @@ libboost_devel:
 libmatio_cpp:
 - 0.3.0
 libyarp:
-- 3.12.0
+- 3.12.1
 macos_machine:
 - x86_64-apple-darwin13.4.0
 target_platform:
