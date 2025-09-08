@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
 
 context:
-  version: "1.2.7"
+  version: "1.2.8"
 
 recipe:
   name: robometry-split
@@ -9,10 +9,10 @@ recipe:
 
 source:
   - url: https://github.com/robotology/robometry/archive/refs/tags/v${{ version }}.tar.gz
-    sha256: 74996f6c50a0e005f25153e48a3b4696bc02053265eabcd5f6efcd09051a8a73
+    sha256: fda43c638cb06c7f14d77700477ca1314a59aae673ef29e42dbe43b159b0e4b1
 
 build:
-  number: 3
+  number: 0
 
 outputs:
   - package:
