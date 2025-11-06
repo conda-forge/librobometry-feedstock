@@ -12,7 +12,7 @@ source:
     sha256: 6db89e2fa21467199bd7a334e3d738e06d21d13715c359b22fc458d1dfe2de93
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - package:
@@ -59,6 +59,8 @@ outputs:
   - package:
       name: robometry
     requirements:
+      host:
+        - libboost-devel
       run:
         - ${{ pin_subpackage('librobometry', exact=True) }}
       run_exports:
