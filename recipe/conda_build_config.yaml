@@ -2,5 +2,5 @@ c_stdlib_version:          # [osx and x86_64]
   - 10.15                  # [osx and x86_64]
 
 libboost_devel:
-  - '1.86'
-  - '1.88'
+  - "1.86"
+  - "1.88"
