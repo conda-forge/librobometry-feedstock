@@ -8,16 +8,28 @@ jobs:
     vmImage: ubuntu-latest
   strategy:
     matrix:
-      linux_64_:
-        CONFIG: linux_64_
+      linux_64_libboost_devel1.86:
+        CONFIG: linux_64_libboost_devel1.86
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_aarch64_:
-        CONFIG: linux_aarch64_
+      linux_64_libboost_devel1.88:
+        CONFIG: linux_64_libboost_devel1.88
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_ppc64le_:
-        CONFIG: linux_ppc64le_
+      linux_aarch64_libboost_devel1.86:
+        CONFIG: linux_aarch64_libboost_devel1.86
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
+      linux_aarch64_libboost_devel1.88:
+        CONFIG: linux_aarch64_libboost_devel1.88
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
+      linux_ppc64le_libboost_devel1.86:
+        CONFIG: linux_ppc64le_libboost_devel1.86
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
+      linux_ppc64le_libboost_devel1.88:
+        CONFIG: linux_ppc64le_libboost_devel1.88
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
   timeoutInMinutes: 360
