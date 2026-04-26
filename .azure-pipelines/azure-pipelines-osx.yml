@@ -8,23 +8,13 @@ jobs:
     vmImage: $(VMIMAGE)
   strategy:
     matrix:
-      osx_64_libboost_devel1.88:
-        CONFIG: osx_64_libboost_devel1.88
+      osx_64_:
+        CONFIG: osx_64_
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
         store_build_artifacts: false
-      osx_64_libboost_devel1.90:
-        CONFIG: osx_64_libboost_devel1.90
-        UPLOAD_PACKAGES: 'True'
-        VMIMAGE: macOS-15
-        store_build_artifacts: false
-      osx_arm64_libboost_devel1.88:
-        CONFIG: osx_arm64_libboost_devel1.88
-        UPLOAD_PACKAGES: 'True'
-        VMIMAGE: macOS-15
-        store_build_artifacts: false
-      osx_arm64_libboost_devel1.90:
-        CONFIG: osx_arm64_libboost_devel1.90
+      osx_arm64_:
+        CONFIG: osx_arm64_
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
         store_build_artifacts: false
