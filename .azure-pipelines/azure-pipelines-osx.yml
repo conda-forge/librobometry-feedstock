@@ -5,21 +5,19 @@
 jobs:
 - job: osx
   pool:
-    vmImage: macOS-15
+    vmImage: $(VMIMAGE)
   strategy:
     matrix:
-      osx_64_libboost_devel1.86:
-        CONFIG: osx_64_libboost_devel1.86
+      osx_64_:
+        CONFIG: osx_64_
         UPLOAD_PACKAGES: 'True'
-      osx_64_libboost_devel1.88:
-        CONFIG: osx_64_libboost_devel1.88
+        VMIMAGE: macOS-15
+        store_build_artifacts: false
+      osx_arm64_:
+        CONFIG: osx_arm64_
         UPLOAD_PACKAGES: 'True'
-      osx_arm64_libboost_devel1.86:
-        CONFIG: osx_arm64_libboost_devel1.86
-        UPLOAD_PACKAGES: 'True'
-      osx_arm64_libboost_devel1.88:
-        CONFIG: osx_arm64_libboost_devel1.88
-        UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
+        store_build_artifacts: false
   timeoutInMinutes: 360
   variables: {}
 
