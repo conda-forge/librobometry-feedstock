@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
 
 context:
-  version: "1.4.2"
+  version: "2.0.0"
 
 recipe:
   name: robometry-split
@@ -9,7 +9,7 @@ recipe:
 
 source:
   - url: https://github.com/robotology/robometry/archive/refs/tags/v${{ version }}.tar.gz
-    sha256: c8bd5b5567c97bf54003d194d324fbee7eb97f453513dafaeef0efdd2016ff4f
+    sha256: f774363dc62122a3e63bf47358145e99217b47957b68a996fb45b675bee0019e
 
 build:
   number: 0
@@ -34,11 +34,8 @@ outputs:
       host:
         - ycm-cmake-modules
         - libmatio-cpp
-        - libboost-devel
         - nlohmann_json
         - libyarp
-      run:
-        - libboost-headers
       run_exports:
         - ${{ pin_subpackage('librobometry', upper_bound='x.x.x') }}
 
@@ -59,8 +56,6 @@ outputs:
   - package:
       name: robometry
     requirements:
-      host:
-        - libboost-devel
       run:
         - ${{ pin_subpackage('librobometry', exact=True) }}
       run_exports:
