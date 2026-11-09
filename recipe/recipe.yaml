@@ -34,11 +34,8 @@ outputs:
       host:
         - ycm-cmake-modules
         - libmatio-cpp
-        - libboost-devel
         - nlohmann_json
         - libyarp
-      run:
-        - libboost-headers
       run_exports:
         - ${{ pin_subpackage('librobometry', upper_bound='x.x.x') }}
 
@@ -59,8 +56,6 @@ outputs:
   - package:
       name: robometry
     requirements:
-      host:
-        - libboost-devel
       run:
         - ${{ pin_subpackage('librobometry', exact=True) }}
       run_exports:
